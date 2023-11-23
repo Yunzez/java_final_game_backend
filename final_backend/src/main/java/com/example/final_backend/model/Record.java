@@ -3,11 +3,11 @@ package com.example.final_backend.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("records")
+@Document(collection = "records")
 public class Record {
 
     @Id
-    private String mongoId;  // Renamed to represent MongoDB's document ID
+    private String mongoId; // Renamed to represent MongoDB's document ID
     private String id;
     private String savingName;
     private int health;
@@ -20,7 +20,11 @@ public class Record {
     private int monsterKilled;
     private int points;
 
-    public Record( String id, String savingName, int health, int strength, int defense, int speed, int level, String name, String imagePath, int monsterKilled, int points) {
+    public Record() {
+    }
+
+    public Record(String id, String savingName, int health, int strength, int defense, int speed, int level,
+            String name, String imagePath, int monsterKilled, int points) {
         this.id = id;
         this.savingName = savingName;
         this.health = health;
@@ -33,5 +37,94 @@ public class Record {
         this.monsterKilled = monsterKilled;
         this.points = points;
     }
+
     // Standard getters and setters
+    public String getId() {
+        return id;
+    }
+
+    public String getSavingName() {
+        return savingName;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public int getMonsterKilled() {
+        return monsterKilled;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setSavingName(String savingName) {
+        this.savingName = savingName;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public void setMonsterKilled(int monsterKilled) {
+        this.monsterKilled = monsterKilled;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
 }
