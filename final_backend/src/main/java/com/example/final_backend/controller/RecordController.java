@@ -1,13 +1,13 @@
 package com.example.final_backend.controller;
 
 import com.example.final_backend.model.Record;
-import com.example.final_backend.repo.RecordRepo;
+import com.service.RecordService;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,20 +15,19 @@ import org.springframework.web.bind.annotation.*;
 public class RecordController {
 
     @Autowired
-    private RecordRepo recordRepo;
-    
+    private RecordService recordSerivce;
+
    @GetMapping
-    public List<Record> getFirst100Records() {
-        Page<Record> page = recordRepo.findAll(PageRequest.of(0, 100));
-        System.out.println("Retrieved " + page.getTotalElements() + " records.");
-        System.out.println(page.getContent());
-        return page.getContent();
+    public ResponseEntity<List<Record>> getFirst100Records() {
+        return new ResponseEntity<>(recordSerivce.getFirst100Records(), HttpStatus.OK);
     }
     @PostMapping
-    public Record createRecord(@RequestBody Record record) {
-        System.out.println("Received record: " + record);
-        return recordRepo.save(record);
+    public ResponseEntity<Object> createRecord(@RequestBody Record record) {
+        return new ResponseEntity<>(recordSerivce.saveRecord(record), HttpStatus.CREATED);
     }
 
-    
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Record>> getRecordsByUserId(@PathVariable("userId") String userId) {
+        return new ResponseEntity<>(recordSerivce.getRecordsByUserId(userId), HttpStatus.OK);
+    }
 }

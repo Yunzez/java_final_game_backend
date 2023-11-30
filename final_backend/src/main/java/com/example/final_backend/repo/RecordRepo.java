@@ -14,6 +14,9 @@ public interface RecordRepo extends MongoRepository<Record, String> {
 
     Page<Record> findAll(Pageable pageable);
 
+    @Query("{ 'userId' : ?0 }")
+    List<Record> findByUserId(String userId);
+
     @Query("{}")
     List<Record> findTop100Records();
-}   
+}
