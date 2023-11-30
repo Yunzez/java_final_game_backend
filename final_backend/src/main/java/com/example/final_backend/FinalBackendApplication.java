@@ -82,7 +82,7 @@ public class FinalBackendApplication implements CommandLineRunner {
                     "imagePath" + i,
                     i * 10, // Monsters Killed
                     i * 100, // Points
-                    i
+                    i+""
             );
             records.add(record);
         }

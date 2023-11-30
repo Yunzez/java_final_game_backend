@@ -30,7 +30,7 @@ public class RecordServiceImp implements RecordService{
         return recordRepo.save(record);
     }
 
-    public Record getRecordsByUserId(long userId) {
+    public Record getRecordsByUserId(String userId) {
         Optional<Record>  record = recordRepo.findByUserId(userId);
         if (record.isPresent()) {
             return record.get();

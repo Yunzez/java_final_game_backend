@@ -19,13 +19,13 @@ public class Record {
     private String imagePath;
     private int monsterKilled;
     private int points;
-    private long userId; // Added to represent the user ID
+    private String userId; // Added to represent the user ID
 
     public Record() {
     }
 
     public Record(String id, String savingName, int health, int strength, int defense, int speed, int level,
-            String name, String imagePath, int monsterKilled, int points, long userId) {
+            String name, String imagePath, int monsterKilled, int points, String userId) {
         this.id = id;
         this.savingName = savingName;
         this.health = health;
@@ -133,11 +133,11 @@ public class Record {
         this.points = points;
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
