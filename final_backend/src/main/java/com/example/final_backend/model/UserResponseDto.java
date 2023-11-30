@@ -1,12 +1,12 @@
 package com.example.final_backend.model;
 
 public class UserResponseDto {
-    private String username;
     private String id;
+    private String username;
 
     public UserResponseDto(String username, String id) {
-        this.username = username;
         this.id = id;
+        this.username = username;
     }
 
     public UserResponseDto() {
