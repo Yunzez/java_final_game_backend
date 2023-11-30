@@ -3,6 +3,8 @@ package com.example.final_backend.controller;
 import com.example.final_backend.model.Record;
 import com.example.final_backend.service.RecordService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class RecordController {
         return new ResponseEntity<>(recordSerivce.getFirst100Records(), HttpStatus.OK);
     }
     @PostMapping
-    public ResponseEntity<Object> createRecord(@RequestBody Record record) {
+    public ResponseEntity<Object> createRecord(@Valid @RequestBody Record record) {
         return new ResponseEntity<>(recordSerivce.saveRecord(record), HttpStatus.CREATED);
     }
 

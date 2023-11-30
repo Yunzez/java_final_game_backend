@@ -3,6 +3,9 @@ package com.example.final_backend.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.validation.constraints.NotBlank;
+
+
 @Document(collection = "records")
 public class Record {
 
@@ -19,6 +22,8 @@ public class Record {
     private String imagePath;
     private int monsterKilled;
     private int points;
+
+    @NotBlank(message = "userId is required")
     private String userId; // Added to represent the user ID
 
     public Record() {
