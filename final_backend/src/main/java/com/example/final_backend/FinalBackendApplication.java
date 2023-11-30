@@ -1,7 +1,13 @@
 package com.example.final_backend;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.final_backend.repo.RecordRepo;
+import com.example.final_backend.model.Record;
+
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
@@ -10,10 +16,17 @@ import com.mongodb.ServerApiVersion;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bson.Document;
 
 @SpringBootApplication
-public class FinalBackendApplication {
+public class FinalBackendApplication implements CommandLineRunner {
+
+    @Autowired
+    private RecordRepo recordRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FinalBackendApplication.class, args);
@@ -37,7 +50,37 @@ public class FinalBackendApplication {
         //         e.printStackTrace();
         //     }
         // }
-		
+
 	}
+
+    @Override
+    public void run(String... args) throws Exception {
+        // delete all records
+        recordRepository.deleteAll();
+
+        //
+        List<Record> records = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            Record record = new Record(
+                    "id" + i,
+                    "savingName" + i,
+                    100, // Health
+                    50,  // Strength
+                    30,  // Defense
+                    20,  // Speed
+                    i,   // Level
+                    "name" + i,
+                    "imagePath" + i,
+                    i * 10, // Monsters Killed
+                    i * 100, // Points
+                    "userId" + i
+            );
+            records.add(record);
+        }
+        recordRepository.saveAll(records);
+    }
+
+
+
 
 }
