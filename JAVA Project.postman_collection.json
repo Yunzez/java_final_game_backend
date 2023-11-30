@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "2d5fee84-27a6-4edf-b4ca-803b3cccaa8d",
+		"name": "JAVA Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28287459"
+	},
+	"item": [
+		{
+			"name": "Get Record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/records",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Record by userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/records/user/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"records",
+						"user",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Record without userId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"id10\",\n        \"savingName\": \"savingName10\",\n        \"health\": 100,\n        \"strength\": 50,\n        \"defense\": 30,\n        \"speed\": 20,\n        \"level\": 0,\n        \"name\": \"name10\",\n        \"imagePath\": \"imagePath10\",\n        \"monsterKilled\": 0,\n        \"points\": 0\n   \n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/records",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"id10\",\n        \"savingName\": \"savingName10\",\n        \"health\": 100,\n        \"strength\": 50,\n        \"defense\": 30,\n        \"speed\": 20,\n        \"level\": 0,\n        \"name\": \"name10\",\n        \"imagePath\": \"imagePath10\",\n        \"monsterKilled\": 0,\n        \"points\": 0,\n        \"userId\": \"userId10\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/records",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"Angelo\",\n    \"password\":\"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User with id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/user/65689f87ff055e764bef0d01",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"65689f87ff055e764bef0d01"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
