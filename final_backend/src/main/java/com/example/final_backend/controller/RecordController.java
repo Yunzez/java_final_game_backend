@@ -1,7 +1,7 @@
 package com.example.final_backend.controller;
 
 import com.example.final_backend.model.Record;
-import com.service.RecordService;
+import com.example.final_backend.service.RecordService;
 
 import java.util.List;
 
