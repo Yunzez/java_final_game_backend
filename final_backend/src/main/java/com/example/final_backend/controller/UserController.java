@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.final_backend.model.User;
+import com.example.final_backend.model.UserResponseDto;
 import com.example.final_backend.service.UserService;
 
 @RestController
@@ -26,8 +27,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
+    public ResponseEntity<UserResponseDto> registerUser(@RequestBody User user) {
         userService.saveUser(user);
-        return new ResponseEntity<>("User with "+user.getUsername()+" registered successfully.",HttpStatus.CREATED);
+        UserResponseDto userResponseDto = new UserResponseDto(user.getUsername(), user.getId());
+        return new ResponseEntity<>(userResponseDto,HttpStatus.CREATED);
     }
 }
