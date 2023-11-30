@@ -11,4 +11,7 @@ public interface UserRepo extends MongoRepository<User, String> {
     // Define custom query methods here if necessary
     @Query("{ 'username' : ?0 }")
     Optional<User> findByUsername(String username);
+
+    @Query("{ 'id' : ?0 }")
+    Optional<User> findById(String id);
 }

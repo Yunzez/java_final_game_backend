@@ -19,13 +19,13 @@ public class Record {
     private String imagePath;
     private int monsterKilled;
     private int points;
-    private String userId; // Added to represent the user ID
+    private long userId; // Added to represent the user ID
 
     public Record() {
     }
 
     public Record(String id, String savingName, int health, int strength, int defense, int speed, int level,
-            String name, String imagePath, int monsterKilled, int points, String userId) {
+            String name, String imagePath, int monsterKilled, int points, long userId) {
         this.id = id;
         this.savingName = savingName;
         this.health = health;
@@ -41,6 +41,10 @@ public class Record {
     }
 
     // Standard getters and setters
+    // public String getMongoID() {
+    //     return mongoId;
+    // }
+
     public String getId() {
         return id;
     }
@@ -129,12 +133,12 @@ public class Record {
         this.points = points;
     }
 
-    public String getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public String setUserId(String userId) {
-        return this.userId = userId;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     private String id;
+
     private String username;
     private String password;
 
@@ -15,8 +16,7 @@ public class User {
     public User() {
     }
 
-    public User(String id, String username, String password) {
-        this.id = id;
+    public User(String username, String password) {
         this.username = username; // Username is unique
         this.password = password;
     }
