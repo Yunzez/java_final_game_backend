@@ -27,7 +27,7 @@ public class RecordController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Record>> getRecordsByUserId(@PathVariable("userId") String userId) {
+    public ResponseEntity<Record> getRecordsByUserId(@PathVariable("userId") String userId) {
         return new ResponseEntity<>(recordSerivce.getRecordsByUserId(userId), HttpStatus.OK);
     }
 }

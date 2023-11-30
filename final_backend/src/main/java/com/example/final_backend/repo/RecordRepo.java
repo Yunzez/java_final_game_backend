@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface RecordRepo extends MongoRepository<Record, String> {
     // Define custom query methods here if necessary
@@ -15,7 +16,7 @@ public interface RecordRepo extends MongoRepository<Record, String> {
     Page<Record> findAll(Pageable pageable);
 
     @Query("{ 'userId' : ?0 }")
-    List<Record> findByUserId(String userId);
+    Optional<Record> findByUserId(String userId);
 
     @Query("{}")
     List<Record> findTop100Records();

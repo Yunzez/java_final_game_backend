@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.final_backend.repo.RecordRepo;
 import com.example.final_backend.model.Record;
@@ -53,12 +56,13 @@ public class FinalBackendApplication implements CommandLineRunner {
 
 	}
 
+    // this method should be removed in production
     @Override
     public void run(String... args) throws Exception {
         // delete all records
         recordRepository.deleteAll();
 
-        //
+        // generate some random records for development
         List<Record> records = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             Record record = new Record(
@@ -81,6 +85,8 @@ public class FinalBackendApplication implements CommandLineRunner {
     }
 
 
-
-
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }

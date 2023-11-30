@@ -6,9 +6,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.example.final_backend.repo.RecordRepo;
+import com.example.final_backend.exception.DocumentNotFoundException;
 import com.example.final_backend.model.Record;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RecordServiceImp implements RecordService{
@@ -28,8 +30,13 @@ public class RecordServiceImp implements RecordService{
         return recordRepo.save(record);
     }
 
-    public List<Record> getRecordsByUserId(String userId) {
-        return recordRepo.findByUserId(userId);
+    public Record getRecordsByUserId(String userId) {
+        Optional<Record>  record = recordRepo.findByUserId(userId);
+        if (record.isPresent()) {
+            return record.get();
+        } else {
+            throw new DocumentNotFoundException("Record not found with userId: " + userId);
+        }
     }
 
 }
