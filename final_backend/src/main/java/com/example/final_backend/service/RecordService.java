@@ -7,5 +7,5 @@ import java.util.List;
 public interface RecordService {
     public List<Record> getFirst100Records();
     public Record saveRecord(Record record);
-    public Record getRecordsByUserId(String userId);
+    public Record getRecordsByUserId(long userId);
 }

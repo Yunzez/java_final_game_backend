@@ -14,7 +14,7 @@ import com.example.final_backend.model.User;
 import com.example.final_backend.service.UserService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<String> getUserById(@PathVariable String id) {
-        return new ResponseEntity<>(userService.getUser(id).toString(), HttpStatus.OK);
+        return new ResponseEntity<>(userService.getUser(id).getUsername(), HttpStatus.OK);
     }
 
     @PostMapping("/register")

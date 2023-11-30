@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.final_backend.repo.RecordRepo;
+import com.example.final_backend.repo.UserRepo;
 import com.example.final_backend.model.Record;
 
 import com.mongodb.ConnectionString;
@@ -30,6 +31,9 @@ public class FinalBackendApplication implements CommandLineRunner {
 
     @Autowired
     private RecordRepo recordRepository;
+
+    @Autowired
+    private UserRepo userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FinalBackendApplication.class, args);
@@ -61,6 +65,7 @@ public class FinalBackendApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // delete all records
         recordRepository.deleteAll();
+        userRepository.deleteAll();
 
         // generate some random records for development
         List<Record> records = new ArrayList<>();
@@ -77,7 +82,7 @@ public class FinalBackendApplication implements CommandLineRunner {
                     "imagePath" + i,
                     i * 10, // Monsters Killed
                     i * 100, // Points
-                    "userId" + i
+                    i
             );
             records.add(record);
         }

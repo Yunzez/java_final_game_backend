@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/records")
+@RequestMapping("/api/records")
 public class RecordController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class RecordController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<Record> getRecordsByUserId(@PathVariable("userId") String userId) {
+    public ResponseEntity<Record> getRecordsByUserId(@PathVariable("userId") long userId) {
         return new ResponseEntity<>(recordSerivce.getRecordsByUserId(userId), HttpStatus.OK);
     }
 }

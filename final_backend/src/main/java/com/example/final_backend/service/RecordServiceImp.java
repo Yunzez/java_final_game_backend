@@ -20,8 +20,8 @@ public class RecordServiceImp implements RecordService{
 
     public List<Record> getFirst100Records() {
         Page<Record> page = recordRepo.findAll(PageRequest.of(0, 100));
-        System.out.println("Retrieved " + page.getTotalElements() + " records.");
-        System.out.println(page.getContent());
+        // System.out.println("Retrieved " + page.getTotalElements() + " records.");
+        // System.out.println(page.getContent());
         return page.getContent();
     }
 
@@ -30,7 +30,7 @@ public class RecordServiceImp implements RecordService{
         return recordRepo.save(record);
     }
 
-    public Record getRecordsByUserId(String userId) {
+    public Record getRecordsByUserId(long userId) {
         Optional<Record>  record = recordRepo.findByUserId(userId);
         if (record.isPresent()) {
             return record.get();
