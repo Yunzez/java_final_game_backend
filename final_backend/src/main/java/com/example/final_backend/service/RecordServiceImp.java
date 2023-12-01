@@ -26,7 +26,7 @@ public class RecordServiceImp implements RecordService{
     }
 
     public Record saveRecord(Record record) {
-        System.out.println("Received record: " + record);
+        // System.out.println("Received record: " + record);
         return recordRepo.save(record);
     }
 
