@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Get Record",
+			"name": "Get top 100 Record",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -132,12 +132,24 @@
 			"response": []
 		},
 		{
-			"name": "Get User with id",
+			"name": "User Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"Angelo\",\n    \"password\":\"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/api/user/65689f87ff055e764bef0d01",
+					"raw": "localhost:8080/api/user/login",
 					"host": [
 						"localhost"
 					],
@@ -145,7 +157,7 @@
 					"path": [
 						"api",
 						"user",
-						"65689f87ff055e764bef0d01"
+						"login"
 					]
 				}
 			},

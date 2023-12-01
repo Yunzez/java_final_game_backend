@@ -69,7 +69,7 @@ public class FinalBackendApplication implements CommandLineRunner {
 
         // generate some random records for development
         List<Record> records = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 200; i++) {
             Record record = new Record(
                     "id" + i,
                     "savingName" + i,
