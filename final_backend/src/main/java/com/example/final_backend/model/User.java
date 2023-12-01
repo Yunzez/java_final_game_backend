@@ -3,13 +3,20 @@ package com.example.final_backend.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.validation.constraints.NotBlank;
+
+
 
 @Document(collection = "users")
 public class User {
     @Id
     private String id;
 
+
+    @NotBlank(message = "Username is mandatory")
     private String username;
+
+    @NotBlank(message = "Password is mandatory")
     private String password;
 
 

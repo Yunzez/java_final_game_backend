@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.final_backend.exception.DocumentNotFoundException;
+import com.example.final_backend.exception.PasswordNotMatchException;
 import com.example.final_backend.model.User;
 import com.example.final_backend.repo.UserRepo;
 
@@ -44,4 +45,13 @@ public class UserServiceImp implements UserService{
         return userRepo.save(user);
     }
 
+    @Override
+    public User loginUser(User user) {
+        User userFromDb = getUserByUsername(user.getUsername());
+        if (bCryptPasswordEncoder.matches(user.getPassword(), userFromDb.getPassword())) {
+            return userFromDb;
+        } else {
+            throw new PasswordNotMatchException("You have entered an incorrect password.");
+        }
+    }
 }
