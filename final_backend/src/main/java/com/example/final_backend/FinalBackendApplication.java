@@ -1,6 +1,5 @@
 package com.example.final_backend;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,32 +7,33 @@ import org.springframework.context.annotation.Bean;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.example.final_backend.repo.RecordRepo;
-import com.example.final_backend.repo.UserRepo;
-import com.example.final_backend.model.Record;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import com.example.final_backend.repo.RecordRepo;
+// import com.example.final_backend.repo.UserRepo;
+// import com.example.final_backend.model.Record;
 
-import com.mongodb.ConnectionString;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoException;
-import com.mongodb.ServerApi;
-import com.mongodb.ServerApiVersion;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
+// import com.mongodb.ConnectionString;
+// import com.mongodb.MongoClientSettings;
+// import com.mongodb.MongoException;
+// import com.mongodb.ServerApi;
+// import com.mongodb.ServerApiVersion;
+// import com.mongodb.client.MongoClient;
+// import com.mongodb.client.MongoClients;
+// import com.mongodb.client.MongoDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
-import org.bson.Document;
+// import org.bson.Document;
 
 @SpringBootApplication
 public class FinalBackendApplication implements CommandLineRunner {
 
-    @Autowired
-    private RecordRepo recordRepository;
+    // @Autowired
+    // private RecordRepo recordRepository;
 
-    @Autowired
-    private UserRepo userRepository;
+    // @Autowired
+    // private UserRepo userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FinalBackendApplication.class, args);

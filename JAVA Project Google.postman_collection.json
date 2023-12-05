@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "2d5fee84-27a6-4edf-b4ca-803b3cccaa8d",
-		"name": "JAVA Project",
+		"_postman_id": "1002ff4f-2cb9-4a78-bdc4-2bab2750e70c",
+		"name": "JAVA Project Google",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "28287459"
 	},
@@ -12,11 +12,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/records",
+					"raw": "{{url}}/api/records",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"records"
@@ -31,11 +30,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/records/user/0",
+					"raw": "{{url}}/api/records/user/0",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"records",
@@ -61,11 +59,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/records",
+					"raw": "{{url}}/api/records",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"records"
@@ -89,11 +86,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/records",
+					"raw": "{{url}}/api/records",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"records"
@@ -117,11 +113,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/user/register",
+					"raw": "{{url}}/api/user/register",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"user",
@@ -146,11 +141,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/user/login",
+					"raw": "{{url}}/api/user/login",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"user",
@@ -167,7 +161,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"Angelo\",\n    \"password\":\"passwordddddd\"\n}",
+					"raw": "{\n    \"username\":\"Angelo\",\n    \"password\":\"passworddd\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -175,11 +169,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/user/login",
+					"raw": "{{url}}/api/user/login",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"user",
