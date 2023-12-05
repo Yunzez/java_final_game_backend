@@ -63,30 +63,30 @@ public class FinalBackendApplication implements CommandLineRunner {
     // this method should be removed in production
     @Override
     public void run(String... args) throws Exception {
-        // delete all records
-        recordRepository.deleteAll();
-        userRepository.deleteAll();
+        // // delete all records
+        // recordRepository.deleteAll();
+        // userRepository.deleteAll();
 
-        // generate some random records for development
-        List<Record> records = new ArrayList<>();
-        for (int i = 0; i < 200; i++) {
-            Record record = new Record(
-                    "id" + i,
-                    "savingName" + i,
-                    100, // Health
-                    50,  // Strength
-                    30,  // Defense
-                    20,  // Speed
-                    i,   // Level
-                    "name" + i,
-                    "imagePath" + i,
-                    i * 10, // Monsters Killed
-                    i * 100, // Points
-                    i+""
-            );
-            records.add(record);
-        }
-        recordRepository.saveAll(records);
+        // // generate some random records for development
+        // List<Record> records = new ArrayList<>();
+        // for (int i = 0; i < 200; i++) {
+        //     Record record = new Record(
+        //             "id" + i,
+        //             "savingName" + i,
+        //             100, // Health
+        //             50,  // Strength
+        //             30,  // Defense
+        //             20,  // Speed
+        //             i,   // Level
+        //             "name" + i,
+        //             "imagePath" + i,
+        //             i * 10, // Monsters Killed
+        //             i * 100, // Points
+        //             i+""
+        //     );
+        //     records.add(record);
+        // }
+        // recordRepository.saveAll(records);
     }
 
 
