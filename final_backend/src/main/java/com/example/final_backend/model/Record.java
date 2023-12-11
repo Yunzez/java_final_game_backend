@@ -3,12 +3,15 @@ package com.example.final_backend.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.validation.constraints.NotBlank;
 
 
 @Document(collection = "records")
 public class Record {
 
+    @JsonIgnore
     @Id
     private String mongoId; // Renamed to represent MongoDB's document ID
     private String id;
@@ -46,9 +49,14 @@ public class Record {
     }
 
     // Standard getters and setters
-    // public String getMongoID() {
-    //     return mongoId;
-    // }
+    public String getMongoId() {
+        return mongoId;
+    }
+
+    public void setMongoId(String mongoId) {
+        this.mongoId = mongoId;
+    }
+
 
     public String getId() {
         return id;
