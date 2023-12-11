@@ -26,6 +26,10 @@ public class RecordServiceImp implements RecordService{
     }
 
     public Record saveRecord(Record record) {
+        Record existingRecord = recordRepo.findByUserId(record.getUserId()).orElse(null);
+        if (existingRecord != null) {
+            record.setId(existingRecord.getId());
+        }
         // System.out.println("Received record: " + record);
         return recordRepo.save(record);
     }
