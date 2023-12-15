@@ -35,30 +35,9 @@ public class FinalBackendApplication implements CommandLineRunner {
     // @Autowired
     // private UserRepo userRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(FinalBackendApplication.class, args);
-
-		// String connectionString = "mongodb+srv://zhaoyunzeabh:Zyz20928%40cn@cluster0.wyhtgjx.mongodb.net/?retryWrites=true&w=majority";
-        // ServerApi serverApi = ServerApi.builder()
-        //         .version(ServerApiVersion.V1)
-        //         .build();
-        // MongoClientSettings settings = MongoClientSettings.builder()
-        //         .applyConnectionString(new ConnectionString(connectionString))
-        //         .serverApi(serverApi)
-        //         .build();
-        // // Create a new client and connect to the server
-        // try (MongoClient mongoClient = MongoClients.create(settings)) {
-        //     try {
-        //         // Send a ping to confirm a successful connection
-        //         MongoDatabase database = mongoClient.getDatabase("admin");
-        //         database.runCommand(new Document("ping", 1));
-        //         System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
-        //     } catch (MongoException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
-
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FinalBackendApplication.class, args);
+    }
 
     // this method should be removed in production
     @Override
@@ -70,28 +49,27 @@ public class FinalBackendApplication implements CommandLineRunner {
         // // generate some random records for development
         // List<Record> records = new ArrayList<>();
         // for (int i = 0; i < 200; i++) {
-        //     Record record = new Record(
-        //             "id" + i,
-        //             "savingName" + i,
-        //             100, // Health
-        //             50,  // Strength
-        //             30,  // Defense
-        //             20,  // Speed
-        //             i,   // Level
-        //             "name" + i,
-        //             "imagePath" + i,
-        //             i * 10, // Monsters Killed
-        //             i * 100, // Points
-        //             i+""
-        //     );
-        //     records.add(record);
+        // Record record = new Record(
+        // "id" + i,
+        // "savingName" + i,
+        // 100, // Health
+        // 50, // Strength
+        // 30, // Defense
+        // 20, // Speed
+        // i, // Level
+        // "name" + i,
+        // "imagePath" + i,
+        // i * 10, // Monsters Killed
+        // i * 100, // Points
+        // i+""
+        // );
+        // records.add(record);
         // }
         // recordRepository.saveAll(records);
     }
 
-
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }
